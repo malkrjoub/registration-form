@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>نموذج تسجيل القبول الجامعي</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<style>
+  body {
+    font-family: Tahoma, sans-serif;
+    background: #f9fafb;
+    margin: 0; padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    direction: rtl;
+  }
+  .form-container {
+    background: white;
+    padding: 30px 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
+    width: 100%;
+    max-width: 650px;
+  }
+  .form-container h2 {
+    text-align: center;
+    color: #0f4c81;
+    margin-bottom: 25px;
+    font-weight: 700;
+  }
+  .input-group {
+    position: relative;
+    margin-bottom: 18px;
+  }
+  .input-group i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: #0f4c81;
+    pointer-events: none;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    width: 100%;
+    padding: 12px 50px 12px 12px;
+    font-size: 16px;
+    border: 1.8px solid #ddd;
+    border-radius: 12px;
+    outline-offset: 3px;
+    transition: border-color 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: white;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  select:focus {
+    border-color: #0f4c81;
+  }
+  .input-group select + i {
+    font-size: 20px;
+    right: 10px;
+  }
+  .row {
+    display: flex;
+    gap: 15px;
+  }
+  .row .input-group {
+    flex: 1;
+  }
+  .hidden {
+    display: none;
+  }
+  button {
+    width: 100%;
+    background: #0f4c81;
+    color: white;
+    font-size: 18px;
+    padding: 13px 0;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background: #093155;
+  }
+  .success-message {
+    text-align: center;
+    color: green;
+    font-weight: 700;
+    margin-top: 15px;
+  }
+  /* تصميم خاص لرمز الدولة مع رقم الواتساب */
+  .whatsapp-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .whatsapp-group select {
+    flex: 0 0 110px;
+    padding: 12px 12px;
+    border-radius: 12px;
+    border: 1.8px solid #ddd;
+    font-size: 14px;
+    background: white;
+    appearance: none;
+  }
+  .whatsapp-group select:focus {
+    border-color: #0f4c81;
+  }
+  .whatsapp-group input[type="tel"] {
+    flex: 1;
+    padding: 12px 12px;
+    border-radius: 12px;
+    border: 1.8px solid #ddd;
+    font-size: 16px;
+  }
+  .whatsapp-group input[type="tel"]:focus {
+    border-color: #0f4c81;
+  }
+  .whatsapp-group + i {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>تسجيل القبول الجامعي</h2>
+  <form id="registrationForm" action="https://formspree.io/f/معرّف_النموذج_الخاص_بك" method="POST" novalidate>
+
+    <div class="input-group">
+      <input type="text" name="full_name" placeholder="الاسم الرباعي" required />
+      <i class="fa-solid fa-user"></i>
+    </div>
+
+    <div class="input-group whatsapp-group">
+      <select name="whatsapp_country_code" required aria-label="رمز الدولة">
+        <option value="+20" selected>مصر 20</option>
+        <option value="+1">الولايات المتحدة الأمريكية 1</option>
+        <option value="+44">المملكة المتحدة 44</option>
+        <option value="+971">الإمارات 971</option>
+        <option value="+966">السعودية 966</option>
+        <option value="+965">الكويت 965</option>
+        <option value="+962">الأردن 962</option>
+        <option value="+970">فلسطين 970</option>
+        <option value="+212">المغرب 212</option>
+        <option value="+213">الجزائر 213</option>
+        <option value="+216">تونس 216</option>
+        <option value="+961">لبنان 961</option>
+        <option value="+964">العراق 964</option>
+        <option value="+973">البحرين 973</option>
+        <option value="+254">كينيا 254</option>
+        <option value="+27">جنوب أفريقيا 27</option>
+        <option value="+39">إيطاليا 39</option>
+        <option value="+33">فرنسا 33</option>
+        <option value="+49">ألمانيا 49</option>
+        <option value="+7">روسيا 7</option>
+        <option value="+81">اليابان 81</option>
+        <option value="+82">كوريا الجنوبية 82</option>
+        <option value="+61">أستراليا 61</option>
+        <option value="+55">البرازيل 55</option>
+        <option value="+52">المكسيك 52</option>
+        <option value="+86">الصين 86</option>
+        <option value="+34">إسبانيا 34</option>
+        <option value="+380">أوكرانيا 380</option>
+        <option value="+48">بولندا 48</option>
+        <option value="+31">هولندا 31</option>
+        <option value="+351">البرتغال 351</option>
+        <option value="+358">فنلندا 358</option>
+        <option value="+46">السويد 46</option>
+        <option value="+47">النرويج 47</option>
+        <option value="+41">سويسرا 41</option>
+        <option value="+43">النمسا 43</option>
+        <option value="+420">جمهورية التشيك 420</option>
+      </select>
+      <input type="tel" name="whatsapp" placeholder="رقم الواتساب" pattern="^\d{7,15}$" title="أدخل رقم واتساب صحيح بدون رمز الدولة" inputmode="numeric" required />
+    </div>
+
+    <div class="input-group">
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required />
+      <i class="fa-solid fa-envelope"></i>
+    </div>
+
+    <div class="input-group">
+      <input type="text" name="passport_number" placeholder="رقم جواز السفر" inputmode="numeric" pattern="\d+" title="أدخل رقم جواز صحيح بالأرقام فقط" required />
+      <i class="fa-solid fa-passport"></i>
+    </div>
+
+    <div class="input-group">
+      <select name="nationality" required aria-label="الجنسية">
+        <option value="">اختر الجنسية</option>
+        <option>مصر</option>
+        <option>فلسطين</option>
+        <option>الأردن</option>
+        <option>السعودية</option>
+        <option>الكويت</option>
+        <option>الإمارات</option>
+        <option>اليمن</option>
+        <option>سوريا</option>
+        <option>العراق</option>
+        <option>لبنان</option>
+        <option>دولة أخرى</option>
+      </select>
+      <i class="fa-solid fa-flag"></i>
+    </div>
+
+    <div class="input-group">
+      <select name="highschool_country" required aria-label="الدولة التي أتممت بها الثانوية">
+        <option value="">اختر الدولة التي أتممت بها الثانوية</option>
+        <option>مصر</option>
+        <option>فلسطين</option>
+        <option>الأردن</option>
+        <option>السعودية</option>
+        <option>الكويت</option>
+        <option>الإمارات</option>
+        <option>اليمن</option>
+        <option>سوريا</option>
+        <option>العراق</option>
+        <option>لبنان</option>
+        <option>دولة أخرى</option>
+      </select>
+      <i class="fa-solid fa-graduation-cap"></i>
+    </div>
+
+    <div class="row">
+      <div class="input-group">
+        <select id="university" name="university" required aria-label="اختر الجامعة">
+          <option value="">اختر الجامعة</option>
+          <option value="جامعة القاهرة">جامعة القاهرة</option>
+          <option value="جامعة عين شمس">جامعة عين شمس</option>
+          <option value="جامعة الإسكندرية">جامعة الإسكندرية</option>
+          <option value="جامعة الأزهر">جامعة الأزهر</option>
+          <option value="جامعة حلوان">جامعة حلوان</option>
+          <option value="جامعة المنصورة">جامعة المنصورة</option>
+          <option value="جامعة طنطا">جامعة طنطا</option>
+          <option value="جامعة أسيوط">جامعة أسيوط</option>
+          <option value="جامعة الزقازيق">جامعة الزقازيق</option>
+          <option value="جامعة جنوب الوادي">جامعة جنوب الوادي</option>
+          <option value="جامعة السويس">جامعة السويس</option>
+          <option value="other">جامعة أخرى</option>
+        </select>
+        <i class="fa-solid fa-university"></i>
+      </div>
+
+      <div class="input-group">
+        <select id="faculty" name="faculty" required aria-label="اختر الكلية">
+          <option value="">اختر الكلية</option>
+        </select>
+        <i class="fa-solid fa-building-columns"></i>
+      </div>
+    </div>
+
+    <div class="input-group hidden" id="otherUniversityContainer">
+      <input type="text" id="otherUniversityInput" name="other_university" placeholder="اكتب اسم الجامعة الأخرى" />
+      <i class="fa-solid fa-university"></i>
+    </div>
+
+    <button type="submit">إرسال الطلب</button>
+    <div class="success-message" id="successMessage" style="display:none;">
+      تم استلام طلبك بنجاح! سنقوم بالتواصل معك قريبًا.
+    </div>
+  </form>
+</div>
+
+<script>
+  const facultiesByUniversity = {
+    "جامعة القاهرة": [
+      "كلية الطب",
+      "كلية الهندسة",
+      "كلية العلوم",
+      "كلية الآداب",
+      "كلية التجارة",
+      "كلية الصيدلة",
+      "كلية الحقوق",
+      "كلية الإعلام",
+      "كلية طب الأسنان",
+      "كلية التربية"
+    ],
+    "جامعة عين شمس": [
+      "كلية الطب",
+      "كلية الهندسة",
+      "كلية العلوم",
+      "كلية التجارة",
+      "كلية الحقوق",
+      "كلية الإعلام",
+      "كلية طب الأسنان",
+      "كلية التربية",
+      "كلية الصيدلة",
+      "كلية الزراعة"
+    ],
+    "جامعة الإسكندرية": [
+      "كلية الطب",
+      "كلية الهندسة",
+      "كلية العلوم",
+      "كلية الحقوق",
+      "كلية التجارة",
+      "كلية طب الأسنان",
+      "كلية التربية",
+      "كلية الصيدلة",
+      "كلية الزراعة",
+      "كلية السياحة والفنادق"
+    ],
+    "جامعة الأزهر": [
+      "كلية الطب",
+      "كلية الشريعة",
+      "كلية الدعوة",
+      "كلية العلوم",
+      "كلية الهندسة",
+      "كلية التربية",
+      "كلية الطب البيطري",
+      "كلية الصيدلة",
+      "كلية طب الأسنان",
+      "كلية الزراعة"
+    ],
+    "جامعة حلوان": [
+      "كلية الهندسة",
+      "كلية الفنون الجميلة",
+      "كلية التربية",
+      "كلية التجارة",
+      "كلية السياحة والفنادق",
+      "كلية الآداب",
+      "كلية العلوم",
+      "كلية الحاسبات والمعلومات",
+      "كلية الصيدلة",
+      "كلية طب الأسنان"
+    ],
+    "جامعة المنصورة": [
+      "كلية الطب",
+      "كلية الهندسة",
+      "كلية العلوم",
+      "كلية التجارة",
+      "كلية الحقوق",
+      "كلية التربية",
+      "كلية الصيدلة",
+      "كلية طب الأسنان",
+      "كلية الزراعة",
+      "كلية الحاسبات والمعلومات"
+    ],
+    "جامعة طنطا": [
+      "كلية الطب",
+      "كلية الهندسة",
+      "كلية العلوم",
+      "كلية الآداب",
+      "كلية التجارة",
+      "كلية التربية",
+      "كلية الصيدلة",
+      "كلية طب الأسنان",
+      "كلية الزراعة",
+      "كلية الحقوق"
+    ],
+    "جامعة أسيوط": [
+      "كلية الطب",
+      "كلية الهندسة",
+      "كلية العلوم",
+      "كلية الآداب",
+      "كلية التجارة",
+      "كلية التربية",
+      "كلية الصيدلة",
+      "كلية طب الأسنان",
+      "كلية الزراعة",
+      "كلية الحقوق"
+    ],
+    "جامعة الزقازيق": [
+      "كلية الطب",
+      "كلية الهندسة",
+      "كلية العلوم",
+      "كلية التجارة",
+      "كلية التربية",
+      "كلية الصيدلة",
+      "كلية طب الأسنان",
+      "كلية الحقوق",
+      "كلية الزراعة",
+      "كلية الحاسبات والمعلومات"
+    ],
+    "جامعة جنوب الوادي": [
+      "كلية الطب",
+      "كلية الهندسة",
+      "كلية العلوم",
+      "كلية التربية",
+      "كلية التجارة",
+      "كلية الصيدلة",
+      "كلية طب الأسنان",
+      "كلية الحقوق",
+      "كلية الزراعة",
+      "كلية الحاسبات والمعلومات"
+    ],
+    "جامعة السويس": [
+      "كلية الطب",
+      "كلية الهندسة",
+      "كلية العلوم",
+      "كلية التجارة",
+      "كلية الحقوق",
+      "كلية التربية",
+      "كلية الصيدلة",
+      "كلية طب الأسنان",
+      "كلية الزراعة",
+      "كلية الحاسبات والمعلومات"
+    ]
+  };
+
+  const universitySelect = document.getElementById('university');
+  const facultySelect = document.getElementById('faculty');
+  const otherUniversityContainer = document.getElementById('otherUniversityContainer');
+  const otherUniversityInput = document.getElementById('otherUniversityInput');
+  const successMessage = document.getElementById('successMessage');
+  const form = document.getElementById('registrationForm');
+
+  function updateFaculties() {
+    const selectedUni = universitySelect.value;
+
+    if (selectedUni === "other") {
+      otherUniversityContainer.classList.remove('hidden');
+      facultySelect.innerHTML = '<option value="">اختر الكلية</option>';
+      facultySelect.disabled = true;
+      otherUniversityInput.required = true;
+      facultySelect.required = false;
+    } else {
+      otherUniversityContainer.classList.add('hidden');
+      otherUniversityInput.required = false;
+      facultySelect.disabled = false;
+      facultySelect.required = true;
+
+      facultySelect.innerHTML = '<option value="">اختر الكلية</option>';
+
+      if (facultiesByUniversity.hasOwnProperty(selectedUni)) {
+        facultiesByUniversity[selectedUni].forEach(faculty => {
+          const option = document.createElement('option');
+          option.value = faculty;
+          option.textContent = faculty;
+          facultySelect.appendChild(option);
+        });
+      }
+    }
+  }
+
+  universitySelect.addEventListener('change', updateFaculties);
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    // إرسال النموذج عبر Formspree أو أي خدمة أخرى
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        successMessage.style.display = 'block';
+        form.reset();
+        facultySelect.innerHTML = '<option value="">اختر الكلية</option>';
+        otherUniversityContainer.classList.add('hidden');
+      } else {
+        alert('حدث خطأ أثناء الإرسال، حاول مرة أخرى.');
+      }
+    }).catch(() => {
+      alert('حدث خطأ في الاتصال، تحقق من الانترنت وحاول مرة أخرى.');
+    });
+  });
+</script>
+
+</body>
+</html>
